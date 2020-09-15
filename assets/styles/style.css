@@ -1,3 +1,12 @@
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+  }
+
 .menubar {
     display: block;
     background-color: #333;
@@ -45,7 +54,7 @@
     text-align: center;
   }
 
-  #requestlist {
+  ul {
     list-style-type: none;
     padding-left: 0;
     margin-left: 0;
@@ -54,6 +63,7 @@
 
   .button, button {
     opacity: 0.7;
+    margin: 10px;
     background-color: #333; 
     color: white;
     padding: 15px 32px;
@@ -66,6 +76,7 @@
     transition-duration: 0.2s;
 
   }
+  
 
   .button:hover, button:hover {
     opacity: 1;
@@ -77,6 +88,14 @@
  
   .menubar-right {
     float: right;
+  }
+
+
+  .aditionalinp {
+    width: 80%;
+  }
+  .removemed {
+    width: 20%;
   }
 
   .ui-autocomplete.ui-widget {
