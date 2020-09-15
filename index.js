@@ -68,7 +68,7 @@ app.get('/request-sent', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-    res.render('login', {layout: false});
+    res.render('login', {layout: 'login-layout.hbs'});
 });
 
 app.get('/dashboard', ensureAuthenticated, (req, res) => {
