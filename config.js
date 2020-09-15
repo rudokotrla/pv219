@@ -1,5 +1,5 @@
 var config = {};
-
+config.db = "mongodb+srv://rudo:test@rest.mrdbe.mongodb.net/reqapi?retryWrites=true&w=majority";
 config.admin = {
     id: 1,
     username: 'gabika',

@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const requestRoutes = require('./api/requests');
-const userRoutes = require('./api/users');
-const searchRoutes = require('./api/search');
-const hbs = require('express-handlebars');
 const path = require('path');
-const session = require('express-session');
 const passport = require('passport');
-const {ensureAuthenticated} = require('./auth');
+const session = require('express-session');
+const hbs = require('express-handlebars');
+
+const requestRoutes = require(path.join(__dirname, 'api', 'requests'));
+const userRoutes = require(path.join(__dirname, 'api', 'users'));
+const searchRoutes = require(path.join(__dirname, 'api', 'search'));
+const {ensureAuthenticated} = require(path.join(__dirname, 'auth'));
+const config = require(path.join(__dirname, 'config'));
 
 //app creation
 const app = express();
@@ -16,7 +18,7 @@ const app = express();
 require('dotenv').config();
 
 //Passport config
-require('./passport')(passport);
+require(path.join(__dirname, 'passport'))(passport);
 
 //Setup
 app.use(express.urlencoded({extended: 'false'}));
@@ -77,7 +79,7 @@ app.get('/dashboard', ensureAuthenticated, (req, res) => {
 const PORT = process.env.PORT || 5000;
 
 //Connect to DB
-mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(config.db, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(
     () => console.log("DB connect succeeded"),
     (err) => console.log("Connection error occured " + err)

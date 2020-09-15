@@ -9,6 +9,7 @@ $(document).ready(function(){
         if (currFields < maxField) {
             currFields++;
             $(container).append(template());
+            addAutocomplete();
 
             $("button.removemed").click(function(){
                 $(this).parent().remove();

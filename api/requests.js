@@ -1,6 +1,7 @@
+const path = require('path');
 const express = require('express');
 const router = express.Router();
-const Request = require('../models/request');
+const Request = require(path.join(__dirname,'..', 'models', 'request'));
 
 
 router.get('/', (req, res) => {   

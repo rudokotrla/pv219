@@ -1,8 +1,8 @@
+const path = require('path');
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 //Admin user stored here
-const config = require('./config');
-
+const config = require(path.join(__dirname, 'config'));
 module.exports = function(passport){
     passport.use(
         new LocalStrategy((username, password, done) => {
