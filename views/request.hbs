@@ -1,0 +1,36 @@
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="/assets/precompiled/medinput.precompiled.js"></script>
+<script src="/assets/scripts/autocomplete.js"></script>
+<script src="/assets/scripts/addfields.js"></script>
+
+<form action="/api/requests", method="post" id="erecept" autocomplete="off">
+    <h1>Ziadanka o recept</h1>
+    <p>Pre poziadanie o recept prosim vyplnte formular a odoslite</p>
+    <section>
+        <h2>Udaje pacienta</h2>
+        <label for="name">
+            <span>Meno: </span>
+            <input type="text" name="name" id="name">
+        </label>
+        <label for="birthNumner">
+            <span>Rodne cislo: </span>
+            <input type="text" name="birthNumber" id="birthNumber">
+        </label>
+
+    </section>
+    <section>
+        <h2>Lieky</h2>
+        <ul class="medinputs">
+            <li>
+                <label>
+                    Liek: 
+                    <input type="text" name="medication">
+                </label>
+            </li>
+        </ul>
+        <button type="button" id="addmed">Pridat liek</button>
+    </section>
+    <input class="button" type="submit" value="Odoslat">
+</form>
+

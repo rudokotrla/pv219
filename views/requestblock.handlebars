@@ -1,0 +1,13 @@
+<ul id="requestlist">
+        {{#each requests}}
+            <li>
+                <div class="requestblock" data-request-id="{{_id}}">
+                    <div class="insiderequestblock">
+                        <p>{{name}}</p>
+                        <p>{{medication}}</p>
+                        <button class="destructbtn deleterequestbtn">Zmazat</button>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
