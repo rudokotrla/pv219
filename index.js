@@ -21,6 +21,7 @@ require('dotenv').config();
 require(path.join(__dirname, 'passport'))(passport);
 
 //Setup
+
 app.use(express.urlencoded({extended: 'false'}));
 
 app.use(session({
